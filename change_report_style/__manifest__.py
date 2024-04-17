@@ -6,8 +6,8 @@
     'depends': ['base'],
 
     'data': [
-        'security/ir.model.access.csv',
-
+        'views/change_style_view.xml',
+        # 'security/ir.model.access.csv',
     ],
 
     'installable': True,
