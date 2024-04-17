@@ -10,10 +10,16 @@
                     <page name="change_style" string="Change style">
                         <form string="change style form">
                             <group>
-                                <field name="second_image_bool"/>
-                                <span style="width:7rem">
-                                    <field name="second_image" string="upload an image" invisible="second_image_bool == False" widget="image"/>
-                                </span>
+                                <group>
+                                    <field name="second_image_bool"/>
+                                </group>
+                                <group>
+
+                                        <field name="second_image" class="oe_avatar "
+                                               style="position:relative; right:10rem"
+                                               invisible="second_image_bool == False" widget="image"/>
+
+                                </group>
                             </group>
                         </form>
                     </page>
