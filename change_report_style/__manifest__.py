@@ -6,6 +6,9 @@
     'depends': ['base'],
 
     'data': [
+        'security/ir.model.access.csv',
+        'views/res_partner_view.xml'
+
         'views/change_style_view.xml',
         # 'security/ir.model.access.csv',
     ],
