@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="move_line_tst_report_template" name="report template">
+            <t t-call="web.html_container" t-encoding="utf-8">
+                <t t-call="change_report_style.external_layout_modified">
+                    <t t-foreach="docs" t-as="doc">
+                        <div>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="move_line_tst_report_record" model="ir.actions.report">
+            <field name="name">print tst</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+            <field name="report_name">change_report_style.move_line_tst_report_template</field>
+            <field name="report_file">change_report_style.move_line_tst_report_template</field>
+            <field name="print_report_name">'move_line_tst'</field>
+        </record>
+    </data>
+</odoo>
