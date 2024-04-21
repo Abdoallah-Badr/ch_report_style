@@ -8,9 +8,11 @@
     'data': [
         'security/ir.model.access.csv',
         'views/res_partner_view.xml',
-
+        'views/external_layout_modified.xml',
         'views/change_style_view.xml',
-        # 'security/ir.model.access.csv',
+
+
+        'reports/upward_invoice_report.xml'
     ],
 
     'installable': True,

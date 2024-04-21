@@ -13,7 +13,7 @@
                                 <group>
                                     <field name="second_image_bool"/>
 
-                                    <field name="modify_layout"/>
+                                    <field name="arabic_layout"/>
 
                                 </group>
                                 <group>
