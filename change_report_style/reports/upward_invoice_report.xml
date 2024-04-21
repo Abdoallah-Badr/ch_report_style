@@ -11,26 +11,24 @@
                                     <table class="table" style="direction: rtl ;">
                                         <tr style="direction: rtl ;">
                                             <td>
-                                                <p>الاسم:
-                                                    <span t-field="doc.partner_id.name_ar"/>
+                                                <p >الاسم:
+                                                    <span t-if="doc.partner_id.name_ar" t-field="doc.partner_id.name_ar"/>
+                                                    <span t-elif="doc.partner_id.name" t-field="doc.partner_id.name"/>
                                                 </p>
-                                                <p>الشارع:
-                                                    <span t-field="doc.partner_id.street_ar"/>
+                                                <p  t-if="doc.partner_id.street_ar or doc.partner_id.street "> الشارع:
+                                                    <span t-if="doc.partner_id.street_ar" t-field="doc.partner_id.street_ar"/>
+                                                    <span t-elif="doc.partner_id.street" t-field="doc.partner_id.street"/>
                                                 </p>
-                                                <p>المدينة:
-                                                    <span t-field="doc.partner_id.city_ar"/>
-                                                </p>
-                                                <p>المنطقة:
-                                                    <span t-field="doc.partner_id.city"/>
+                                                <p t-if="doc.partner_id.city_ar or doc.partner_id.city" >المدينة/ المنطقة:
+                                                    <span t-if="doc.partner_id.city" t-field="doc.partner_id.city"/>
+                                                    <span t-elif="doc.partner_id.city_ar" t-field="doc.partner_id.city_ar"/>
                                                     <span t-field="doc.partner_id.state_id.code"/>
                                                     <span t-field="doc.partner_id.zip"/>
                                                 </p>
                                                 <p>الدولة :
                                                     <span t-field="doc.partner_id.country_id"/>
                                                 </p>
-
-
-                                            </td>
+                                                </td>
 
 
                                             <td style="direction: ltr ;">
@@ -49,7 +47,7 @@
                                     <h5>الرقم الضريبي:
                                         <span t-field="doc.partner_id.vat"/>
                                     </h5>
-                                    <h3 style="direction: ltr">
+                                    <h4 style="direction: ltr">
                                         <div class="row">
                                             <div class="col-4" style="text-align:left">
                                                 <span t-if="doc.move_type == 'out_invoice' and doc.state == 'posted'">
@@ -107,7 +105,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                    </h3>
+                                    </h4>
                                     <div id="informations" class="pb-3" style="direction: ltr">
                                         <div class="row" t-if="doc.invoice_date" name="invoice_date">
                                             <div class="col-2 offset-6">
