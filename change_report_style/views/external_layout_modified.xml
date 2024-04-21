@@ -7,8 +7,15 @@
              t-att-style="report_header_style">
             <div class="row " style="direction: rtl;">
                 <div class="col-3 mb4">
-                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;"
-                         alt="Logo"/>
+                    <t t-if="not company.second_logo">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;"
+                             alt="Logo"/>
+                    </t>
+                    <t t-else="">
+                         <img t-if="company.second_logo" t-att-src="image_data_uri(company.second_logo)" style="max-height: 45px;"
+                             alt="Second logo"/>
+                    </t>
+
                 </div>
                 <div class="col-9 text-end" style="margin-top:22px;" t-if="company.report_header"
                      t-field="company.report_header" name="moto">Company tagline

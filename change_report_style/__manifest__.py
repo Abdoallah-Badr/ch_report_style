@@ -10,7 +10,10 @@
         'views/res_partner_view.xml',
         'views/external_layout_modified.xml',
         'views/change_style_view.xml',
+<<<<<<< HEAD
         'views/res_company_view.xml',
+=======
+>>>>>>> main
         'reports/upward_invoice_report.xml',
     ],
 
