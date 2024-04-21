@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="company_form_change_style_inherited" model="ir.ui.view">
+            <field name="name">company.form.change.style.inherited</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='branches']" position="after">
+                    <page name="change_style" string="Change style">
+                        <form string="change style form">
+                            <group>
+                                <group>
+                                    <field name="second_image_bool"/>
+                                </group>
+                                <group>
+
+                                        <field name="second_image" class="oe_avatar "
+                                               style="position:relative; right:10rem"
+                                               invisible="second_image_bool == False" widget="image"/>
+
+                                </group>
+                            </group>
+                        </form>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
