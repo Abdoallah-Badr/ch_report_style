@@ -11,24 +11,32 @@
                                     <table class="table" style="direction: rtl ;">
                                         <tr style="direction: rtl ;">
                                             <td>
-                                                <p >الاسم:
-                                                    <span t-if="doc.partner_id.name_ar" t-field="doc.partner_id.name_ar"/>
+                                                <p>الاسم:
+                                                    <span t-if="doc.partner_id.name_ar"
+                                                          t-field="doc.partner_id.name_ar"/>
                                                     <span t-elif="doc.partner_id.name" t-field="doc.partner_id.name"/>
                                                 </p>
-                                                <p  t-if="doc.partner_id.street_ar or doc.partner_id.street "> الشارع:
-                                                    <span t-if="doc.partner_id.street_ar" t-field="doc.partner_id.street_ar"/>
-                                                    <span t-elif="doc.partner_id.street" t-field="doc.partner_id.street"/>
+                                                <p t-if="doc.partner_id.street_ar or doc.partner_id.street ">الشارع:
+                                                    <span t-if="doc.partner_id.street_ar"
+                                                          t-field="doc.partner_id.street_ar"/>
+                                                    <span t-elif="doc.partner_id.street"
+                                                          t-field="doc.partner_id.street"/>
                                                 </p>
-                                                <p t-if="doc.partner_id.city_ar or doc.partner_id.city" >المدينة/ المنطقة:
+                                                <p t-if="doc.partner_id.city_ar or doc.partner_id.city">المدينة/
+                                                    المنطقة:
                                                     <span t-if="doc.partner_id.city" t-field="doc.partner_id.city"/>
-                                                    <span t-elif="doc.partner_id.city_ar" t-field="doc.partner_id.city_ar"/>
+                                                    <span t-elif="doc.partner_id.city_ar"
+                                                          t-field="doc.partner_id.city_ar"/>
                                                     <span t-field="doc.partner_id.state_id.code"/>
                                                     <span t-field="doc.partner_id.zip"/>
                                                 </p>
                                                 <p>الدولة :
                                                     <span t-field="doc.partner_id.country_id"/>
                                                 </p>
-                                                </td>
+                                                <h5>الرقم الضريبي:
+                                                    <span t-field="doc.partner_id.vat"/>
+                                                </h5>
+                                            </td>
 
 
                                             <td style="direction: ltr ;">
@@ -44,9 +52,6 @@
 
 
                                     </table>
-                                    <h5>الرقم الضريبي:
-                                        <span t-field="doc.partner_id.vat"/>
-                                    </h5>
                                     <h4 style="direction: ltr">
                                         <div class="row">
                                             <div class="col-4" style="text-align:left">
@@ -625,7 +630,8 @@
                     </t>
                 </t>
                 <t t-else="">
-                    <h5 class="text-center mt-5">check <span class="text-danger">arabic layout</span> report from company configuration in
+                    <h5 class="text-center mt-5">check <span class="text-danger">arabic layout</span> report from
+                        company configuration in
                         change style tab <span class="text-danger">or</span> print default report
                     </h5>
                 </t>
