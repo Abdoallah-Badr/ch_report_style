@@ -10,7 +10,7 @@
         'views/res_partner_view.xml',
         'views/external_layout_modified.xml',
         'views/change_style_view.xml',
-
+        'views/res_company_view.xml',
         'reports/upward_invoice_report.xml',
     ],
 

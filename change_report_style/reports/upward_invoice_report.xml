@@ -640,7 +640,7 @@
 
 
         <record id="action_upward_employee_status_template" model="ir.actions.report">
-            <field name="name">Upward Invoice</field>
+            <field name="name">Upward Arabic Invoice</field>
             <field name="model">account.move</field>
             <field name="report_type">qweb-html</field>
             <field name="report_name">change_report_style.upward_invoice_arabic_template</field>

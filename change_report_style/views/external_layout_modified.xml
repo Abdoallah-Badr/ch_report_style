@@ -3,7 +3,8 @@
 
 
     <template id="external_layout_modified">
-        <div style="direction: rtl;" class="text-right" t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+        <div style="direction: rtl;" class="text-right" t-attf-class="header o_company_#{company.id}_layout"
+             t-att-style="report_header_style">
             <div class="row " style="direction: rtl;">
                 <div class="col-3 mb4">
                     <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;"
@@ -13,22 +14,46 @@
                      t-field="company.report_header" name="moto">Company tagline
                 </div>
             </div>
+            <!--            -->
             <div t-if="company.logo or company.report_header" class="row zero_min_height">
                 <div class="col-12">
                     <div style="border-bottom: 1px solid black;"/>
                 </div>
             </div>
+            <!--            under line-->
             <div class="row" style="direction: rtl;">
-                <div class="col-6" name="company_address" >
+                <div class="col-6" name="company_address">
                     <ul class="list-unstyled" name="company_address_list" style="padding-right: 0;">
                         <li t-if="company.is_company_details_empty">
-                            <span t-field="company.partner_id"
-                                  t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'>
-                                <div class="bg-light border-1 rounded h-100 d-flex flex-column align-items-center justify-content-center p-4 w-100 opacity-75 text-muted text-center">
-                                    <strong>Company address block</strong>
-                                    <div>Contains the company address.</div>
-                                </div>
-                            </span>
+                            <p>الاسم:
+                                <span t-if="doc.company_id.name_ar"
+                                      t-field="doc.company_id.name_ar"/>
+                                <span t-elif="doc.company_id.name" t-field="doc.company_id.name"/>
+                            </p>
+                            <p t-if="doc.company_id.street_ar or doc.company_id.street ">الشارع:
+                                <span t-if="doc.company_id.street_ar"
+                                      t-field="doc.company_id.street_ar"/>
+                                <span t-elif="doc.company_id.street"
+                                      t-field="doc.company_id.street"/>
+                            </p>
+                            <p t-if="doc.company_id.city_ar or doc.company_id.city">المدينة/
+                                المنطقة:
+                                <span t-if="doc.company_id.city" t-field="doc.company_id.city"/>
+                                <span t-elif="doc.company_id.city_ar"
+                                      t-field="doc.company_id.city_ar"/>
+                                <span t-field="doc.company_id.state_id.code"/>
+                                <span t-field="doc.company_id.zip"/>
+                            </p>
+                            <p>الدولة :
+                                <span t-field="doc.company_id.country_id"/>
+                            </p>
+<!--                            <span t-field="company.partner_id"-->
+<!--                                  t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'>-->
+<!--                                <div class="bg-light border-1 rounded h-100 d-flex flex-column align-items-center justify-content-center p-4 w-100 opacity-75 text-muted text-center">-->
+<!--                                    <strong>Company address block</strong>-->
+<!--                                    <div>Contains the company address.</div>-->
+<!--                                </div>-->
+<!--                            </span>-->
                         </li>
                         <li t-else="">
                             <span t-field="company.company_details">
