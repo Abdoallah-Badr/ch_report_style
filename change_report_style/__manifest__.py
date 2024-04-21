@@ -11,8 +11,7 @@
         'views/external_layout_modified.xml',
         'views/change_style_view.xml',
 
-
-        'reports/upward_invoice_report.xml'
+        'reports/upward_invoice_report.xml',
     ],
 
     'installable': True,
