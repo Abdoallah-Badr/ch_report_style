@@ -203,7 +203,7 @@
                                     </div>
 
                                     <table class="table table-sm o_main_table" name="invoice_line_table"
-                                           style="direction: ltr">
+                                           style="direction: ltr;font-size:12px">
                                         <thead>
                                             <tr>
                                                 <t t-set="colspan" t-value="6"/>
