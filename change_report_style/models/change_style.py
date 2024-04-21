@@ -6,6 +6,8 @@ class ChangeStyle(models.Model):
     second_image_bool=fields.Boolean(string='Add another image',default=False)
     second_image=fields.Binary(string='upload an image')
 
+    arabic_layout = fields.Boolean(default=False)
+
     @api.constrains('second_image_bool','second_image')
     def _check_second_image(self):
         for rec in self:

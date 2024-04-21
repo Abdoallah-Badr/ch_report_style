@@ -3,8 +3,6 @@ from datetime import date, datetime, timedelta
 
 
 class upward_sale_support(models.Model):
-    _name = 'res.partner'
-    _description = ''
     _inherit = 'res.partner'
 
 

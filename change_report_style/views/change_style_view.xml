@@ -12,13 +12,18 @@
                             <group>
                                 <group>
                                     <field name="second_image_bool"/>
+
+                                    <field name="arabic_layout"/>
+
                                 </group>
                                 <group>
 
-                                        <field name="second_image" class="oe_avatar "
-                                               style="position:relative; right:10rem"
-                                               invisible="second_image_bool == False" widget="image"/>
+                                    <field name="second_image" class="oe_avatar "
+                                           style="position:relative; right:10rem"
+                                           invisible="second_image_bool == False" widget="image"/>
 
+                                </group>
+                                <group>
                                 </group>
                             </group>
                         </form>
