@@ -11,15 +11,16 @@
                         <form string="change style form">
                             <group>
                                 <group>
-                                    <field name="second_logo_bool"/>
 
                                     <field name="arabic_layout"/>
+                                    <field name="second_logo_bool"  invisible="arabic_layout == False"/>
+
 
                                 </group>
                                 <group>
 
                                     <field name="second_logo" class="oe_avatar "
-                                           style="position:relative; right:10rem"
+                                           style="position:relative; right:10rem;"
                                            invisible="second_logo_bool == False" widget="image"/>
 
                                 </group>
