@@ -9,7 +9,8 @@
         'security/ir.model.access.csv',
         'views/res_partner_view.xml',
         'reports/upward_invoice_report.xml',
-        ],
+        'views/change_style_view.xml'
+    ],
 
     'installable': True,
 }
