@@ -3,7 +3,7 @@
     'name': "Edit company Options",
     'author': "Upward co.",
     'version': '17.0',
-    'depends': ['base'],
+    'depends': ['base','account','l10n_gcc_invoice','l10n_sa'],
 
     'data': [
         'security/ir.model.access.csv',
