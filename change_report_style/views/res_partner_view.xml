@@ -12,9 +12,6 @@
                         <form>
                             <group>
                                <field name="name_ar"/>
-                               <field name="street_ar"/>
-                               <field name="street2_ar"/>
-                               <field name="city_ar"/>
                             </group>
                         </form>
                     </page>

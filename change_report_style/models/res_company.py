@@ -3,8 +3,8 @@ from odoo import models,fields,api,exceptions,_
 class ChangeStyle(models.Model):
     _inherit = 'res.company'
 
-    second_image_bool = fields.Boolean(string='Add another image', default=False)
-    second_image = fields.Binary(string='upload an image')
+    second_logo_bool = fields.Boolean(string='Add another image', default=False)
+    second_logo = fields.Binary(string='upload an image')
     name_ar = fields.Char(string='Name Ar', )
     street_ar = fields.Char(string='Street Ar', )
     street2_ar = fields.Char(string='Street2 Ar', )
