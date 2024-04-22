@@ -3,17 +3,17 @@
 
 
     <template id="external_layout_modified">
-        <div style="direction: rtl;" class="text-right" t-attf-class="header o_company_#{company.id}_layout"
+        <div class="text-right position-relative" t-attf-class="header o_company_#{company.id}_layout"
              t-att-style="report_header_style">
-            <div class="row " style="direction: rtl;">
-                <div class="col-3 mb4">
+            <div class="row col-12" style=" direction: ltr;">
+                <div class="col-3 mb4 position-absolute">
                     <t t-if="not company.second_logo">
-                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;"
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;"
                              alt="Logo"/>
                     </t>
                     <t t-else="">
                         <img t-if="company.second_logo" t-att-src="image_data_uri(company.second_logo)"
-                             style="max-height: 45px;"
+                             style="max-height: 70px; "
                              alt="Second logo"/>
                     </t>
 
@@ -23,11 +23,8 @@
                 </div>
             </div>
             <!--            -->
-            <div t-if="company.logo or company.report_header" class="row zero_min_height">
-                <div class="col-12">
-                    <div style="border-bottom: 1px solid black;"/>
-                </div>
-            </div>
+
+
             <!--            under line-->
             <div class="row" style="direction: rtl;">
                 <div class="col-6" name="company_address">
@@ -48,12 +45,6 @@
                                 <span t-field="doc.company_id.vat"/>
 
                             </span>
-                            <!--                            <p class="p-0 m-0" t-if="doc.company_id.street_ar or doc.company_id.street ">الشارع:-->
-                            <!--                                <span t-if="doc.company_id.street_ar"-->
-                            <!--                                      t-field="doc.company_id.street_ar"/>-->
-                            <!--                                <span t-elif="doc.company_id.street"-->
-                            <!--                                      t-field="doc.company_id.street"/>-->
-                            <!--                            </p>-->
                             <p class="p-0 m-0">
 
                                 <span t-if="doc.company_id.street" t-field="doc.company_id.street"/>
@@ -66,13 +57,6 @@
 
                             </p>
 
-                            <!--                            <span t-field="company.partner_id"-->
-                            <!--                                  t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'>-->
-                            <!--                                <div class="bg-light border-1 rounded h-100 d-flex flex-column align-items-center justify-content-center p-4 w-100 opacity-75 text-muted text-center">-->
-                            <!--                                    <strong>Company address block</strong>-->
-                            <!--                                    <div>Contains the company address.</div>-->
-                            <!--                                </div>-->
-                            <!--                            </span>-->
                         </li>
                         <li t-else="">
                             <span t-field="company.company_details">
@@ -104,7 +88,7 @@
         </div>
 
         <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
-            <div class="text-left" style="border-top: 1px solid black;">
+            <div class="text-left">
                 <ul class="list-inline mb4">
                     <div t-field="company.report_footer"/>
                 </ul>
