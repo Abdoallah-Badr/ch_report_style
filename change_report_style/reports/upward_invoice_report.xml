@@ -16,7 +16,8 @@
                                                           t-field="doc.partner_id.name_ar"/>
                                                     <span t-elif="doc.partner_id.name" t-field="doc.partner_id.name"/>
                                                 </p>
-                                                <p class="p-0 m-0" t-if="doc.partner_id.street_ar or doc.partner_id.street ">العنوان:
+                                                <p class="p-0 m-0"
+                                                   t-if="doc.partner_id.street_ar or doc.partner_id.street ">العنوان:
                                                     <span t-if="doc.partner_id.street_ar"
                                                           t-field="doc.partner_id.street_ar"/>
                                                     <span t-elif="doc.partner_id.street"
