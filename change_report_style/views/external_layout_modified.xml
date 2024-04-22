@@ -45,31 +45,30 @@
                                 <span t-field="doc.company_id.vat"/>
 
                             </span>
-                            <!--                            <p class="p-0 m-0" t-if="doc.company_id.street_ar or doc.company_id.street ">الشارع:-->
-                            <!--                                <span t-if="doc.company_id.street_ar"-->
-                            <!--                                      t-field="doc.company_id.street_ar"/>-->
-                            <!--                                <span t-elif="doc.company_id.street"-->
-                            <!--                                      t-field="doc.company_id.street"/>-->
-                            <!--                            </p>-->
                             <p class="p-0 m-0">
+                                <span t-if="doc.company_id.street">
+                                    <span t-field="doc.company_id.street"/>
+                                </span>
 
-                                <span t-if="doc.company_id.street" t-field="doc.company_id.street"/>
-                                -
-                                <span t-if="doc.company_id.city" t-field="doc.company_id.city"/>
-                                -
-                                <span t-field="doc.company_id.state_id.code"/>
-                                -
-                                <span t-field="doc.company_id.country_id"/>
+                                <span t-if="doc.company_id.city">
+                                    -
+                                    <span t-field="doc.company_id.city"/>
+
+                                </span>
+
+                                <span t-if="doc.company_id.state_id.code">
+                                    -
+                                    <span t-field="doc.company_id.state_id.code"/>
+
+                                </span>
+
+                                <span t-if="doc.company_id.country_id">
+                                    -
+                                    <span t-field="doc.company_id.country_id"/>
+                                </span>
+
 
                             </p>
-
-                            <!--                            <span t-field="company.partner_id"-->
-                            <!--                                  t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'>-->
-                            <!--                                <div class="bg-light border-1 rounded h-100 d-flex flex-column align-items-center justify-content-center p-4 w-100 opacity-75 text-muted text-center">-->
-                            <!--                                    <strong>Company address block</strong>-->
-                            <!--                                    <div>Contains the company address.</div>-->
-                            <!--                                </div>-->
-                            <!--                            </span>-->
                         </li>
                         <li t-else="">
                             <span t-field="company.company_details">

@@ -23,15 +23,18 @@
                                                     <span t-elif="doc.partner_id.street"
                                                           t-field="doc.partner_id.street"/>
                                                 </p>
-                                                <p class="p-0 m-0"  t-if="doc.partner_id.city_ar or doc.partner_id.city">المدينة/
+                                                <p class="p-0 m-0" t-if="doc.partner_id.city_ar or doc.partner_id.city">
+                                                    المدينة/
                                                     المنطقة:
                                                     <span t-if="doc.partner_id.city" t-field="doc.partner_id.city"/>
+                                                    <span t-if="doc.partner_id.state_id.name">,
+                                                        <span t-field="doc.partner_id.state_id.name"/>
+                                                    </span>
+                                                    <span t-if="doc.partner_id.zip">
+                                                        ,
+                                                        <span t-field="doc.partner_id.zip"/>
+                                                    </span>
 
-                                                    ,
-                                                    <span t-field="doc.partner_id.state_id.name"/>
-                                                    ,
-
-                                                    <span t-field="doc.partner_id.zip"/>
                                                 </p>
                                                 <p class="p-0 m-0">الدولة :
                                                     <span t-field="doc.partner_id.country_id"/>
