@@ -30,7 +30,7 @@
             </div>
             <!--            under line-->
             <div class="row" style="direction: rtl;">
-                <div class="col-6" name="company_address">
+                <div name="company_address">
                     <ul class="list-unstyled" name="company_address_list" style="padding-right: 0;">
                         <li t-if="company.is_company_details_empty">
                             <p class="p-0 m-0">
@@ -38,16 +38,15 @@
                                       t-field="doc.company_id.name_ar"/>
                                 <span t-elif="doc.company_id.name" t-field="doc.company_id.name"/>
                             </p>
-
-
-                            <span class="p-0 m-0" t-if="doc.company_id.company_registry">رقم تجاري
-                                <span t-field="doc.company_id.company_registry"/>
-                            </span>
-                            <span style="padding-right:10px" t-if="doc.company_id.vat">
-                                سجل ضريبي رقم
+                            <span style="padding-right:0px" t-if="doc.company_id.vat">رقم ضريبي
                                 <span t-field="doc.company_id.vat"/>
 
                             </span>
+
+                            <span class="p-0 m-0" t-if="doc.company_id.company_registry">سجل تجاري
+                                <span t-field="doc.company_id.company_registry"/>
+                            </span>
+
                             <!--                            <p class="p-0 m-0" t-if="doc.company_id.street_ar or doc.company_id.street ">الشارع:-->
                             <!--                                <span t-if="doc.company_id.street_ar"-->
                             <!--                                      t-field="doc.company_id.street_ar"/>-->
@@ -55,13 +54,23 @@
                             <!--                                      t-field="doc.company_id.street"/>-->
                             <!--                            </p>-->
                             <p class="p-0 m-0">
+                                <span t-if="doc.company_id.street">
+                                    <span  t-field="doc.company_id.street"/>
+                                    -
+                                </span>
 
-                                <span t-if="doc.company_id.street" t-field="doc.company_id.street"/>
-                                -
-                                <span t-if="doc.company_id.city" t-field="doc.company_id.city"/>
-                                -
-                                <span t-field="doc.company_id.state_id.code"/>
-                                -
+                                <span t-if="doc.company_id.city">
+                                    <span t-field="doc.company_id.city"/>
+                                    -
+                                </span>
+
+                                <span t-if="doc.company_id.state_id.code">
+                                    <span t-field="doc.company_id.state_id.code"/>
+                                    -
+                                </span>
+
+
+
                                 <span t-field="doc.company_id.country_id"/>
 
                             </p>
