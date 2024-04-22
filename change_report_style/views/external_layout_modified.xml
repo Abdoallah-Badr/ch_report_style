@@ -3,10 +3,10 @@
 
 
     <template id="external_layout_modified">
-        <div class="text-right position-relative" t-attf-class="header o_company_#{company.id}_layout"
+        <div class="text-right" t-attf-class="header o_company_#{company.id}_layout"
              t-att-style="report_header_style">
             <div class="row col-12" style=" direction: ltr;">
-                <div class="col-3 mb4 position-absolute">
+                <div class="col-3 mb4 ">
                     <t t-if="not company.second_logo">
                         <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 70px;"
                              alt="Logo"/>
@@ -45,6 +45,12 @@
                                 <span t-field="doc.company_id.vat"/>
 
                             </span>
+                            <!--                            <p class="p-0 m-0" t-if="doc.company_id.street_ar or doc.company_id.street ">الشارع:-->
+                            <!--                                <span t-if="doc.company_id.street_ar"-->
+                            <!--                                      t-field="doc.company_id.street_ar"/>-->
+                            <!--                                <span t-elif="doc.company_id.street"-->
+                            <!--                                      t-field="doc.company_id.street"/>-->
+                            <!--                            </p>-->
                             <p class="p-0 m-0">
 
                                 <span t-if="doc.company_id.street" t-field="doc.company_id.street"/>
@@ -57,6 +63,13 @@
 
                             </p>
 
+                            <!--                            <span t-field="company.partner_id"-->
+                            <!--                                  t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'>-->
+                            <!--                                <div class="bg-light border-1 rounded h-100 d-flex flex-column align-items-center justify-content-center p-4 w-100 opacity-75 text-muted text-center">-->
+                            <!--                                    <strong>Company address block</strong>-->
+                            <!--                                    <div>Contains the company address.</div>-->
+                            <!--                                </div>-->
+                            <!--                            </span>-->
                         </li>
                         <li t-else="">
                             <span t-field="company.company_details">
