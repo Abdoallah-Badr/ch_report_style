@@ -27,7 +27,7 @@
 
             <!--            under line-->
             <div class="row" style="direction: rtl;">
-                <div class="col-6" name="company_address">
+                <div name="company_address">
                     <ul class="list-unstyled" name="company_address_list" style="padding-right: 0;">
                         <li t-if="company.is_company_details_empty">
                             <p class="p-0 m-0">
@@ -40,7 +40,7 @@
                             <span class="p-0 m-0" t-if="doc.company_id.company_registry">رقم تجاري
                                 <span t-field="doc.company_id.company_registry"/>
                             </span>
-                            <span style="padding-right:10px" t-if="doc.company_id.vat">
+                            <span style="padding-right:0px" t-if="doc.company_id.vat">
                                 سجل ضريبي رقم
                                 <span t-field="doc.company_id.vat"/>
 
