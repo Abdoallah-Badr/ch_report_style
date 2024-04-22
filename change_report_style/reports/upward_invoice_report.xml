@@ -26,9 +26,14 @@
                                                 <p class="p-0 m-0" t-if="doc.partner_id.city_ar or doc.partner_id.city">
                                                     المدينة/
                                                     المنطقة:
-                                                    <span t-if="doc.partner_id.city" t-field="doc.partner_id.city"/>
-                                                    <span t-if="doc.partner_id.state_id.name">,
-                                                        <span t-field="doc.partner_id.state_id.name"/>
+                                                    <span t-if="doc.partner_id.city">
+                                                        <span t-field="doc.partner_id.city"/>
+
+                                                    </span>
+
+
+                                                    <span t-if="doc.partner_id.state_id">,
+                                                        <span t-field="doc.partner_id.state_id.code"/>
                                                     </span>
                                                     <span t-if="doc.partner_id.zip">
                                                         ,
@@ -36,7 +41,7 @@
                                                     </span>
 
                                                 </p>
-                                                <p class="p-0 m-0">الدولة :
+                                                <p t-if="doc.partner_id.country_id" class="p-0 m-0">الدولة :
                                                     <span t-field="doc.partner_id.country_id"/>
                                                 </p>
                                                 <p class="p-0 m-0">الرقم الضريبي:
@@ -633,7 +638,7 @@
         <record id="action_upward_employee_status_template" model="ir.actions.report">
             <field name="name">Upward Arabic Invoice</field>
             <field name="model">account.move</field>
-            <field name="report_type">qweb-pdf</field>
+            <field name="report_type">qweb-html</field>
             <field name="report_name">change_report_style.upward_invoice_arabic_template</field>
             <field name="report_file">change_report_style.upward_invoice_arabic_template</field>
             <field name="binding_model_id" ref="account.model_account_move"/>
