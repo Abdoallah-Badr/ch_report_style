@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="custom_form_view_id" model="ir.ui.view">
-        <field name="name">inherit.res.partner.form.view</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="name">inherit.res.company.form.view</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
             <data>
                 <!-- Add custom_field to the base view -->
-                <xpath expr="//page[@name='internal_notes']" position="after">
+                <xpath expr="//page[@name='branches']" position="after">
                     <page name="arabic_info" string="Arabic Info">
                         <form>
                             <group>
                                <field name="name_ar"/>
+                               <field name="street_ar"/>
+                               <field name="street2_ar"/>
+                               <field name="city_ar"/>
                             </group>
                         </form>
                     </page>

@@ -7,29 +7,37 @@
                     <t t-call="change_report_style.external_layout">
                         <t t-foreach="docs" t-as="doc">
                             <div class="page">
-                                <div style="direction: rtl ; padding: 20px; margin-bottom:50px">
-                                    <table class="table" style="direction: rtl ;">
+                                <div style="direction: rtl ; padding: 0px; margin-bottom:50px" class="">
+                                    <table class="table  table-borderless" style="direction: rtl ;">
                                         <tr style="direction: rtl ;">
                                             <td>
-                                                <p>الاسم:
-                                                    <span t-field="doc.partner_id.name_ar"/>
+                                                <p class="p-0 m-0">الاسم:
+                                                    <span t-if="doc.partner_id.name_ar"
+                                                          t-field="doc.partner_id.name_ar"/>
+                                                    <span t-elif="doc.partner_id.name" t-field="doc.partner_id.name"/>
                                                 </p>
-                                                <p>الشارع:
-                                                    <span t-field="doc.partner_id.street_ar"/>
+                                                <p class="p-0 m-0" t-if="doc.partner_id.street_ar or doc.partner_id.street ">العنوان:
+                                                    <span t-if="doc.partner_id.street_ar"
+                                                          t-field="doc.partner_id.street_ar"/>
+                                                    <span t-elif="doc.partner_id.street"
+                                                          t-field="doc.partner_id.street"/>
                                                 </p>
-                                                <p>المدينة:
-                                                    <span t-field="doc.partner_id.city_ar"/>
-                                                </p>
-                                                <p>المنطقة:
-                                                    <span t-field="doc.partner_id.city"/>
-                                                    <span t-field="doc.partner_id.state_id.code"/>
+                                                <p class="p-0 m-0"  t-if="doc.partner_id.city_ar or doc.partner_id.city">المدينة/
+                                                    المنطقة:
+                                                    <span t-if="doc.partner_id.city" t-field="doc.partner_id.city"/>
+
+                                                    ,
+                                                    <span t-field="doc.partner_id.state_id.name"/>
+                                                    ,
+
                                                     <span t-field="doc.partner_id.zip"/>
                                                 </p>
-                                                <p>الدولة :
+                                                <p class="p-0 m-0">الدولة :
                                                     <span t-field="doc.partner_id.country_id"/>
                                                 </p>
-
-
+                                                <p class="p-0 m-0">الرقم الضريبي:
+                                                    <span t-field="doc.partner_id.vat"/>
+                                                </p>
                                             </td>
 
 
@@ -46,10 +54,7 @@
 
 
                                     </table>
-                                    <h5>الرقم الضريبي:
-                                        <span t-field="doc.partner_id.vat"/>
-                                    </h5>
-                                    <h3 style="direction: ltr">
+                                    <h4 style="direction: ltr">
                                         <div class="row">
                                             <div class="col-4" style="text-align:left">
                                                 <span t-if="doc.move_type == 'out_invoice' and doc.state == 'posted'">
@@ -107,7 +112,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                    </h3>
+                                    </h4>
                                     <div id="informations" class="pb-3" style="direction: ltr">
                                         <div class="row" t-if="doc.invoice_date" name="invoice_date">
                                             <div class="col-2 offset-6">
@@ -136,21 +141,6 @@
                                             <div class="col-2 text-end">
                                                 <strong style="white-space:nowrap">:
                                                     تاريخ الاستحقاق
-                                                </strong>
-                                            </div>
-                                        </div>
-                                        <div class="row" t-if="doc.delivery_date" name="delivery_date">
-                                            <div class="col-6"></div>
-                                            <div class="col-2">
-                                                <strong style="white-space:nowrap">Delivery Date:
-                                                </strong>
-                                            </div>
-                                            <div class="col-2">
-                                                <span t-field="doc.delivery_date"/>
-                                            </div>
-                                            <div class="col-2 text-end">
-                                                <strong style="white-space:nowrap">:
-                                                    تاريخ التوصيل
                                                 </strong>
                                             </div>
                                         </div>
@@ -200,7 +190,7 @@
                                     </div>
 
                                     <table class="table table-sm o_main_table" name="invoice_line_table"
-                                           style="direction: ltr">
+                                           style="direction: ltr;font-size:12px">
                                         <thead>
                                             <tr>
                                                 <t t-set="colspan" t-value="6"/>
@@ -557,7 +547,7 @@
                                     </div>
 
                                     <p name="payment_communication" t-if="0"></p>
-                                    <div style="direction: ltr" class="row"
+                                    <div style="direction: ltr;page-break-inside: avoid;" class="row"
                                          t-if="doc.move_type in ('out_invoice', 'in_refund') and doc.payment_reference"
                                          name="payment_communication">
                                         <div class="col-2 offset-6">
@@ -627,7 +617,8 @@
                     </t>
                 </t>
                 <t t-else="">
-                    <h5 class="text-center mt-5">check <span class="text-danger">arabic layout</span> report from company configuration in
+                    <h5 class="text-center mt-5">check <span class="text-danger">arabic layout</span> report from
+                        company configuration in
                         change style tab <span class="text-danger">or</span> print default report
                     </h5>
                 </t>
@@ -638,7 +629,7 @@
         <record id="action_upward_employee_status_template" model="ir.actions.report">
             <field name="name">Upward Arabic Invoice</field>
             <field name="model">account.move</field>
-            <field name="report_type">qweb-pdf</field>
+            <field name="report_type">qweb-html</field>
             <field name="report_name">change_report_style.upward_invoice_arabic_template</field>
             <field name="report_file">change_report_style.upward_invoice_arabic_template</field>
             <field name="binding_model_id" ref="account.model_account_move"/>
