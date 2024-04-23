@@ -7,8 +7,9 @@
                     <t t-call="change_report_style.external_layout">
                         <t t-foreach="docs" t-as="doc">
                             <div class="page">
-                                <div style="direction: rtl ; padding: 0px; margin-bottom:50px" class="">
-                                    <table class="table  table-borderless" style="direction: rtl ;">
+                                <link rel="stylesheet" href="/change_report_style/static/src/css/style.css"/>
+                                <div style="direction: rtl ; padding: 0px; margin-bottom:50px; " class="arabic rubik">
+                                    <table class="table table-borderless " style="direction: rtl ;">
                                         <tr style="direction: rtl ;">
                                             <td>
                                                 <p class="p-0 m-0">الاسم:

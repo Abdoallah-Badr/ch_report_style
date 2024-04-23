@@ -3,8 +3,10 @@
 
 
     <template id="external_layout_modified">
-        <div class="text-right" t-attf-class="header o_company_#{company.id}_layout"
-             t-att-style="report_header_style">
+        <link rel="stylesheet" href="/change_report_style/static/src/css/style.css"/>
+        <div class="text-right arabic rubik" t-attf-class="header o_company_#{company.id}_layout"
+             t-att-style="report_header_style"
+             style="font-family:Verdana, Arial,sans-serif;">
             <div class="row col-12" style=" direction: ltr;">
                 <div class="col-3 mb4 ">
                     <t t-if="not company.second_logo">
@@ -26,8 +28,8 @@
 
 
             <!--            under line-->
-            <div class="row" style="direction: rtl;">
-                <div name="company_address">
+            <div class="row arabic rubik" style="direction: rtl;">
+                <div class="col-6" name="company_address">
                     <ul class="list-unstyled" name="company_address_list" style="padding-right: 0;">
                         <li t-if="company.is_company_details_empty">
                             <p class="p-0 m-0">
