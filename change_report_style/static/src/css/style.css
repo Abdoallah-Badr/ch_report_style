@@ -1,0 +1,15 @@
+.rubik {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+   font-family: 'Rubik';
+   src: url('/change_report_style/static/src/fonts/Rubik-Regular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+.arabic{
+   font-family:Rubik !important;
+}
